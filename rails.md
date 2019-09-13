@@ -5,29 +5,30 @@ Answer the following questions. First, without external resources. Challenge you
 
 1. MVC (Model View Controller) is a pattern for the architecture of a software program. Give a brief description of each component and describe how Ruby on Rails handles MVC.
 
-  Your answer:
+  Your answer: Model is for the data. Views is for the user interface. Controller for the how the user interacts.
 
-  Researched answer:
-
+  Researched answer: Models for handling data and business logic
+  Controllers for handling the user interface and application
+  Views for handling graphical user interface objects and presentation
 
 
 2. Using the information given, fill in the blanks to complete the steps for creating a new view in a Rails application.
 
-  Step 1: Create the _________ in the file config/routes
+  Step 1: Create the routes in the file config/routes
   ```
   get '/about' => 'statics#about'
   ```
 
-  Step 2: Create the ____________ in the file _____________
+  Step 2: Create the controller in the file statics_controller.rb
   ```
-  class ____________ < ApplicationController
-    def ___________
-      render: ________________
+  class StaticsController < ApplicationController
+    def about
+      render: about.html.erb
     end
   end
   ```
 
-  Step 3: Create the View in the file ______________
+  Step 3: Create the View in the file about.html.erb
   code:
   ```
   <div>This is the About page!</div>
@@ -45,16 +46,14 @@ Answer the following questions. First, without external resources. Challenge you
 /users/1      method="PUT"     # :controller => 'users', :action => 'update'
 /users/1      method="DELETE"  # :controller => 'users', :action => 'destroy'
 ```
-
-
-
+These make up CRUD. GET retrieves the data and must be passed params. POST displays them. DELETE just delees the params.
 
 
 4. What is the public folder used for in Rails?
 
   Your answer:
 
-  Researched answer:
+  Researched answer: The public folder is used serve static files.
 
 
 
@@ -64,15 +63,15 @@ Answer the following questions. First, without external resources. Challenge you
 
 6. What are cookies? What is the difference between a session and a cookie?
 
-  Your answer:
+  Your answer: cookies are stored values
 
-  Researched answer:
+  Researched answer: Cookies and Sessions are used to store information. Cookies are only stored on the client-side machine, while sessions get stored on the client as well as a server
 
 
 
 7. In an html form, what does the "action" attribute tell you about the form? How do you designate the HTTP verb for the form?
 
-  Your answer:
+  Your answer: The action attribute tells you where the information will be going. GET and POST are used to designate what information you're recieving and what information is being displayed.
 
   Researched answer:
 
@@ -80,9 +79,9 @@ Answer the following questions. First, without external resources. Challenge you
 
 8. Name two rails generator commands and what files they create:
 
-  Your answer:
+  Your answer: rails generate controller, generates controller. rails generate migration, generates migration.
 
-  Researched answer:
+  Researched answer: Rails generate resource. Generating a resource does everything generating a model does, but it also creates a resource in the routes.rb file and an empty folder in the views.
 
 
 9. Rails has a great community and lots of free tutorials to help you learn. Choose one of these resources and look through the material for 10-15 min. List three new things you learned about Rails:
@@ -90,7 +89,7 @@ Answer the following questions. First, without external resources. Challenge you
 - [Rails for Zombies](http://railsforzombies.org)
 - [Rails Guides](http://guides.rubyonrails.org/getting_started.html)
 
-1.
+1. You can use http_basic_authenticate_with to allow for authentication so that users are only allowed to access certain features if logged in.
 
 2.
 
